@@ -8,7 +8,17 @@ import Home from "./components/Home";
 
 import About from "./components/About";
 
+import PropTypes from 'prop-types';
+
 export class App extends React.Component {
+
+    // keyword
+    getChildContext() {
+        return {
+                color: this.props.color,
+                name: "Product App"
+            };
+    }
 
     // react keyword
     // create a virtual dom, returns v dom
@@ -31,3 +41,9 @@ export class App extends React.Component {
     }
 
 }
+
+//keyword
+App.childContextTypes = {
+    color: PropTypes.string,
+    name: PropTypes.string
+  };
