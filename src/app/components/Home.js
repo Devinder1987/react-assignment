@@ -2,75 +2,60 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 
+// throw away code
+import store from "../store";
+
 export default class Home extends Component {
     constructor(props) {
         super(props);
-
-        // state is a keyword
-        // mutable
-        // state is owned by component
-        this.state = {
-            counter: 0,
-            show: true
-        }
  
+        console.log("Home cons", new Date().getMilliseconds());
+ 
+       
     }
 
     increment() {
-        // //BAD, mutating state directly
-        // this.state.counter++;
+         let action = {
+             type: 'INCREMENT',
+             payload: {
+                 value: 1
+             }
+         }
 
-        // console.log(this.state.counter);
+         store.dispatch(action);
+    }
 
-        // //BAD, let react to call render method
-     //    this.forceUpdate();
+    componentWillMount() {
+        console.log("Home will mount", new Date().getMilliseconds());
+    }
 
-        //GOOD
-        console.log("before SetState ", this.state.counter);
-        //merge state, calls render 
-        //setState is async
-        this.setState({
-            //Immutable
-            counter: this.state.counter + 1
-        });
-
-        this.setState({
-            show: !this.state.show
+    componentDidMount() {
+        console.log("Home did mount", new Date().getMilliseconds());
+        this.unsubcribeFunc = store.subscribe( () => {
+            console.log("Home Subs called", Math.random());
+            this.forceUpdate();
         })
+    }
 
-        console.log("after SetState ", this.state.counter);
-
-        //console.trace("called");
-
+    componentWillUnmount() {
+        console.log("home will unmount");
+        this.unsubcribeFunc();
     }
     
-
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log("Home should update curent state", this.state);
-        console.log("Home should update next state", nextState);
-        
-
-        if (nextState.counter %2 == 1) 
-            return true;
-
-        return false;
-    }
+ 
     
     render() {
-        console.log("Home render", this.state.counter);
-
-        //let _this = this;
+        console.log("Home render", new Date().getMilliseconds());
+         
+        let state = store.getState();
+        let counter = state;
 
         return (
             <div> 
             <h2>Home</h2>
 
-            <p> Counter: {this.state.counter}</p>
-
-            {/* <button onClick={ function() { _this.increment() } }>
-              +1
-            </button> */}
-
+            <p> Counter: {counter} </p>
+ 
                 
                  <button onClick={ () => this.increment()  }>
                 +1
