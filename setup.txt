@@ -1,0 +1,20 @@
+http://code.nodesense.ai/
+username: nodesense
+password: bsol
+,
+---
+
+open command/terminal 
+
+git clone https://github.com/nodesense/react-workshop
+
+cd react-workshop
+
+npm install
+
+--
+
+
+1. Node.js 8.9 (or 6.10 onwards)
+2. Visual Studio Code
+3. Chrome latest
