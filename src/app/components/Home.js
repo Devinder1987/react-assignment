@@ -23,7 +23,7 @@ export default class Home extends Component {
         // console.log(this.state.counter);
 
         // //BAD, let react to call render method
-        // this.forceUpdate();
+     //    this.forceUpdate();
 
         //GOOD
         console.log("before SetState ", this.state.counter);
@@ -44,6 +44,17 @@ export default class Home extends Component {
 
     }
     
+
+    shouldComponentUpdate(nextProps, nextState) {
+        console.log("Home should update curent state", this.state);
+        console.log("Home should update next state", nextState);
+        
+
+        if (nextState.counter %2 == 1) 
+            return true;
+
+        return false;
+    }
     
     render() {
         console.log("Home render", this.state.counter);

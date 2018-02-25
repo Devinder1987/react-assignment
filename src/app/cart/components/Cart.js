@@ -53,6 +53,7 @@ export default class Cart extends Component {
         }
 
         const newItems = [...this.state.items, item];
+         
         this.setState({
             items: newItems
         });
@@ -104,7 +105,7 @@ export default class Cart extends Component {
             </button>
 
             <CartList items={this.state.items}
-                      
+                      onRemove={ (id) => this.removeItem(id) }
             
             />
 
