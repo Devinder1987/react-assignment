@@ -26,14 +26,13 @@ export default function Routes(props) {
     return (
         <Router>
             <App color='white'>
-
-                <Route path="/"   component={Home} />
-                <Route path="/about"   component={About} />
-                <Route path="/contact"   component={Contact} />
-                <Route path="/cart"   component={Cart} />
-                <Route path="*"   component={NotFound} />
-                
-
+               <Switch>
+                    <Route path="/"  exact   component={Home} />
+                    <Route path="/about"   component={About} />
+                    <Route path="/contact"   component={Contact} />
+                    <Route path="/cart"   component={Cart} />
+                    <Route path="*"   component={NotFound} />
+                </Switch>
             </App>
         </Router>
     )
