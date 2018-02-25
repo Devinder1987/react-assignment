@@ -47,6 +47,10 @@ export default class About extends Component {
             name: ''
         })
     }
+
+    componentDidMount() {
+        this.inputElem.focus();
+    }
     
     render() {
         console.log("About render");
@@ -60,6 +64,8 @@ export default class About extends Component {
                    onChange= { (e)=> this.onHandleChange(e) }
                    
                    onBlur={ ()=> this.addToList() }
+
+                   ref={ (elem) => this.inputElem = elem }
                    
                    />
             
