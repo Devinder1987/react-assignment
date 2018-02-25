@@ -1,10 +1,10 @@
 
-import React, {Component} from "react";
+import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
 
 import CartItem from "./CartItem";
 
-export default class CartList extends Component {
+export default class CartList extends PureComponent {
     constructor(props) {
         super(props);
         console.log("CartList cons");
@@ -16,13 +16,13 @@ export default class CartList extends Component {
     }
     
 
-    shouldComponentUpdate(nextProps, nextState) {
-        console.log("cart list should update");
-        console.log("current list ", this.props.items.length);
-        console.log("current list ", nextProps.items.length);
-        console.log("this.props.items == nextProps.items", this.props.items == nextProps.items)
-        return  nextProps.items != this.props.items;
-    }
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     console.log("cart list should update");
+    //     console.log("current list ", this.props.items.length);
+    //     console.log("current list ", nextProps.items.length);
+    //     console.log("this.props.items == nextProps.items", this.props.items == nextProps.items)
+    //     return  nextProps.items != this.props.items;
+    // }
 
 
     componentDidMount() {

@@ -15,6 +15,18 @@ export default class Cart extends Component {
             count: 0, // qty of all items
             flag: false //dummy
         }
+
+        //ES6 style
+        // this.onRemove2 = (id) => {
+        //     this.removeItem(id);
+        // }
+
+        //es5 style
+        // new bound funtion = original function binded
+        
+        this.removeItem = this.removeItem.bind(this);
+
+
     }
 
     componentWillMount() {
@@ -63,6 +75,15 @@ export default class Cart extends Component {
 
     removeItem(id) {
         //TODO:
+
+        let newItems = this.state.items
+                            .filter (item => item.id != id);
+
+        this.setState({
+            items: newItems
+        });
+
+        this.recalculateTotal(newItems);
          
     }
 
@@ -105,7 +126,7 @@ export default class Cart extends Component {
             </button>
 
             <CartList items={this.state.items}
-                      onRemove={ (id) => this.removeItem(id) }
+                      onRemove={ this.removeItem }
             
             />
 
