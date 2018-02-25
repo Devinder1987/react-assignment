@@ -4,14 +4,14 @@ import Footer from "./components/Footer";
 
 import Header from "./components/Header";
 
-//import Home from "./components/Home";
+import Home from "./components/Home";
 
-//import About from "./components/About";
+import About from "./components/About";
 
 import PropTypes from 'prop-types';
 
 
-//import Cart from "./cart/components/Cart";
+import Cart from "./cart/components/Cart";
 
 export class App extends React.Component {
     
@@ -38,11 +38,7 @@ export class App extends React.Component {
 
                 <Header title="Product App" />
 
-                {/* children contains routes path */}
  
-                <div>
-                    {this.props.children}
-                </div>
 
                 {/* <Cart />
 

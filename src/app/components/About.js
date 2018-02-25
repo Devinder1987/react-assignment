@@ -49,7 +49,8 @@ export default class About extends Component {
     }
 
     componentDidMount() {
-        this.inputElem.focus();
+        //this.inputElem.focus();
+        this.refs.inputElem.focus();
     }
     
     render() {
@@ -59,13 +60,16 @@ export default class About extends Component {
             <div> 
             <h2>About</h2>
 
+            {/* ref={ (elem) => this.inputElem = elem } */}
+
             <input type="text"
                    value={this.state.value} 
                    onChange= { (e)=> this.onHandleChange(e) }
                    
                    onBlur={ ()=> this.addToList() }
 
-                   ref={ (elem) => this.inputElem = elem }
+                   ref="inputElem"
+                   
                    
                    />
             
