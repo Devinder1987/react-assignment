@@ -6,8 +6,6 @@ export default class CartSummary extends Component {
     constructor(props) {
         super(props);
     }
-
- 
     
     render() {
         console.log("CartSummary render");

@@ -10,8 +10,11 @@ import About from "./components/About";
 
 import PropTypes from 'prop-types';
 
-export class App extends React.Component {
 
+import Cart from "./cart/components/Cart";
+
+export class App extends React.Component {
+    
     // keyword
     getChildContext() {
         return {
@@ -30,6 +33,8 @@ export class App extends React.Component {
                 <h1>Welcome To React</h1>
 
                 <Header title="Product App" />
+
+                <Cart />
 
                 <Home />
 

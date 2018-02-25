@@ -42,10 +42,7 @@ export default class Cart extends Component {
             qty: 1
         }
 
-         
-    
-    );
-
+        //TODO:
          
     }
 
