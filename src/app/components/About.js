@@ -78,7 +78,7 @@ export default class About extends Component {
                     onMouseEnter={ () => this.setState({highlight: true})}
 
                     onMouseLeave={ () => this.setState({highlight: false})}
-                    className={this.state.highlight && "success"}
+                    className={this.state.highlight? "success": ""}
             
             >
                {this.state.show? "Hide": "Show"}
