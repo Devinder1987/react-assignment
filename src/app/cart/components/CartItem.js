@@ -31,6 +31,10 @@ export default class CartItem extends Component {
         )
     }
 
+    componentWillUnmount() {
+        console.log("cartitem will unmount");
+    }
+
 } 
 
 

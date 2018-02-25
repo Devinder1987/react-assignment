@@ -23,6 +23,10 @@ export class App extends React.Component {
             };
     }
 
+    componentDidMount() {
+        console.log("App did mount");
+    }
+    
     // react keyword
     // create a virtual dom, returns v dom
     render() {
@@ -36,9 +40,11 @@ export class App extends React.Component {
 
                 <Cart />
 
+             
                 <Home />
 
                 <About />
+                
 
                  <Footer year={2018} company="Xebia" />
             </div>

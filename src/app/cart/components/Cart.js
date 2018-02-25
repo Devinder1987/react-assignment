@@ -16,7 +16,17 @@ export default class Cart extends Component {
             flag: false //dummy
         }
     }
+
+    componentWillMount() {
+        console.log("cart will mount");
+        this.recalculateTotal(this.state.items);
+    }
  
+
+    componentDidMount() {
+        console.log("cart did mount");
+    }
+
     recalculateTotal(items) {
         let count = 0;
         let amount = 0;
@@ -42,8 +52,12 @@ export default class Cart extends Component {
             qty: 1
         }
 
-        //TODO:
-         
+        const newItems = [...this.state.items, item];
+        this.setState({
+            items: newItems
+        });
+
+        this.recalculateTotal(newItems);
     }
 
     removeItem(id) {
