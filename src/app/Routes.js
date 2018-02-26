@@ -20,6 +20,8 @@ import NotFound from "./components/NotFound";
 import Contact from "./components/Contact";
 import Cart from "./cart/components/Cart";
 
+// default import, alias by default
+import ReduxHome from "./containers/ReduxHome";
  
 // functional component
 export default function Routes(props) {
@@ -28,6 +30,10 @@ export default function Routes(props) {
             <App color='white'>
                <Switch>
                     <Route path="/"  exact   component={Home} />
+
+                    <Route path="/redux-home"  exact   component={ReduxHome} />
+                    
+
                     <Route path="/about"   component={About} />
                     <Route path="/contact"   component={Contact} />
                     <Route path="/cart"   component={Cart} />

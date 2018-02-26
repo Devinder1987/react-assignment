@@ -22,7 +22,9 @@ export default class Home extends Component {
              }
          }
 
+         console.log("BEGIN DISPATCH");
          store.dispatch(action);
+         console.log("DONE DISPATCH");
     }
 
     componentWillMount() {
@@ -48,7 +50,8 @@ export default class Home extends Component {
         console.log("Home render", new Date().getMilliseconds());
          
         let state = store.getState();
-        let counter = state;
+        console.log("STATE ", state, typeof state);
+        let counter = state.counter;
 
         return (
             <div> 

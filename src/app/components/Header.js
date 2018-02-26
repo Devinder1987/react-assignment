@@ -31,6 +31,10 @@ export default class Header extends Component {
                      Home
                 </NavLink>
 
+                <NavLink to="/redux-home"  exact className="button" activeClassName="success" >
+                     Redux Home
+                </NavLink>
+
                 <NavLink to="/products" className="button" activeClassName="success" >
                      Product
                 </NavLink>
