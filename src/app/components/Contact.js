@@ -18,6 +18,7 @@ export default class Contact extends Component {
 
             <p> Name: {this.context.name} </p>
             <p> Color: {this.context.color} </p>
+            <p> Counter: {this.context.store.getState().counter}</p>
             </div>
         )
     }
@@ -34,5 +35,6 @@ Contact.propTypes = {
 
 Contact.contextTypes = {
     color: PropTypes.string,
-    name: PropTypes.string
+    name: PropTypes.string,
+    store: PropTypes.object
 }

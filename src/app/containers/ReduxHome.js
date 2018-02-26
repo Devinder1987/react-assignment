@@ -2,6 +2,8 @@ import {connect} from 'react-redux';
 
 import ReduxHome from '../components/ReduxHome';
 
+import {incrementActionCreator} from "../state/actions";
+
 
 // mapStateToProps is called by container
 // when on susbcribe, containers shall subscribe from store
@@ -27,12 +29,14 @@ function mapDispatchToProps(dispatch) {
     return {
         //propName: function() {}
         parentIncrement: function() {
-            let action = {
-                type: 'INCREMENT',
-                payload: {
-                    value: 1
-                }
-            };
+            // let action = {
+            //     type: 'INCREMENT',
+            //     payload: {
+            //         value: 1
+            //     }
+            // };
+
+            let action = incrementActionCreator(1);
 
             console.log("Dispatch from container", action);
             dispatch(action);

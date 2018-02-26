@@ -36,7 +36,7 @@ export default class Header extends Component {
                 </NavLink>
 
                 <NavLink to="/products" className="button" activeClassName="success" >
-                     Product
+                     Products
                 </NavLink>
 
 

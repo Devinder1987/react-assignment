@@ -22,6 +22,8 @@ import Cart from "./cart/components/Cart";
 
 // default import, alias by default
 import ReduxHome from "./containers/ReduxHome";
+
+import ProductList from "./cart/containers/ProductList";
  
 // functional component
 export default function Routes(props) {
@@ -33,8 +35,10 @@ export default function Routes(props) {
 
                     <Route path="/redux-home"  exact   component={ReduxHome} />
                     
-
+                    <Route path="/products"   component={ProductList} />
+                    
                     <Route path="/about"   component={About} />
+
                     <Route path="/contact"   component={Contact} />
                     <Route path="/cart"   component={Cart} />
                     <Route path="*"   component={NotFound} />

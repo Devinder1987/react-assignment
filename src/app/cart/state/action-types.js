@@ -1,0 +1,3 @@
+export const INIT_PRODUCTS="CART.INIT_PRODUCTS";
+export const LOADING="CART.LOADING";
+export const ERROR="CART.ERROR";

@@ -19,7 +19,7 @@ export class App extends React.Component {
     getChildContext() {
         return {
                 color: this.props.color,
-                name: "Product App"
+                name: "Product App" 
             };
     }
 
