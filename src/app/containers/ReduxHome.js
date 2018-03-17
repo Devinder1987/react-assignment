@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 
-import ReduxHome from '../components/ReduxHome';
+// import ReduxHome from '../components/ReduxHome';
 
 import {incrementActionCreator} from "../state/actions";
 

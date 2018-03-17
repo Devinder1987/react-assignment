@@ -9,101 +9,29 @@ export default class About extends Component {
         super(props);
 
         this.state = {
-            frameworks: ['React', 'Redux'],
+            company: 'Xebia IT solutions',
+            teammates: ['Devinder', 'Mayank', 'Deepankar'],
             show: true,
             name: 'Enter name',
             highlight: false
         }
     }
 
-    getList() {
-        let list = [];
-        for(let name of this.state.frameworks) {
-            list.push(<li> {name}</li>)
-            //list.push(React.createElement('li', null, name));
-        }
-
-        return list;
-    }
-     
-
-    toggle() {
-        this.setState({
-            show: !this.state.show
-        })
-    }
-
-    onHandleChange(e) {
-        //target is real dom object
-        console.log(e.target.value);
-        this.setState({
-            name: e.target.value
-        })
-    }
-
-    addToList() {
-        this.setState({
-            frameworks: [...this.state.frameworks, this.state.name],
-            name: ''
-        })
-    }
-
-    componentDidMount() {
-        //this.inputElem.focus();
-        this.refs.inputElem.focus();
-    }
-    
+ 
     render() {
-        console.log("About render");
-
+        const { company, teammates} = this.state;
         return (
             <div> 
-            <h2>About</h2>
-
-            {/* ref={ (elem) => this.inputElem = elem } */}
-
-            <input type="text"
-                   value={this.state.value} 
-                   onChange= { (e)=> this.onHandleChange(e) }
-                   
-                   onBlur={ ()=> this.addToList() }
-
-                   ref="inputElem"
-                   
-                   
-                   />
-            
-            <button onClick={ ()=> this.toggle()} 
-            
-                    onMouseEnter={ () => this.setState({highlight: true})}
-
-                    onMouseLeave={ () => this.setState({highlight: false})}
-                    className={this.state.highlight? "success": ""}
-            
-            >
-               {this.state.show? "Hide": "Show"}
-            </button>
-
-             {this.state.show? <p>Shown</p> : <p>Not Shown</p>}   
-
-
-            { this.state.show &&
+            <h2>{company}</h2>
             <ul>
-                  {/* {this.getList()}   */}
- 
                   {
                       this.state
-                      .frameworks.map((name, index) => (
+                      .teammates.map((name, index) => (
                           <li key={name} > {name} </li>
                       ))
                   }
             </ul>
             }
-
-
-
-           
-
             </div>
         )
     }

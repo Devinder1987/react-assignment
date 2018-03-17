@@ -31,7 +31,7 @@ export default class Header extends Component {
                      Home
                 </NavLink>
 
-                <NavLink to="/redux-home"  exact className="button" activeClassName="success" >
+                {/*<NavLink to="/redux-home"  exact className="button" activeClassName="success" >
                      Redux Home
                 </NavLink>
 
@@ -42,7 +42,7 @@ export default class Header extends Component {
 
                 <NavLink to="/cart" className="button" activeClassName="success">
                      Cart
-                </NavLink>
+                </NavLink>*/}
 
 
                 <NavLink to="/about" className="button" activeClassName="success">

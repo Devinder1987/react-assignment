@@ -26,32 +26,14 @@ export class App extends React.Component {
     componentDidMount() {
         console.log("App did mount");
     }
-    
-    // react keyword
-    // create a virtual dom, returns v dom
     render() {
-        console.log("App render")
 
         return (
             <div>
-                <h1>Welcome To React</h1>
-
-                <Header title="Product App" />
-
-                {/* children contains routes path */}
- 
+                <Header title="Assignment App" />
                 <div>
                     {this.props.children}
                 </div>
-
-                {/* <Cart />
-
-             
-                <Home />
-
-                <About /> */}
-                
-
                  <Footer year={2018} company="Xebia" >
                     <p>Contact Time: 9:00 to 6:00 </p>
                  </Footer>

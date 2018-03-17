@@ -1,8 +1,6 @@
-import {createStore, combineReducers, 
-                    applyMiddleware} from 'redux';
+import {createStore, combineReducers, applyMiddleware} from 'redux';
 
 import counterReducer from "./state/counterReducer";
-import productReducer from './cart/state/productReducer';
 
 // function called by store
 //for every dispatch
@@ -24,8 +22,7 @@ function loggerMiddleware({dispatch, getState}) {
  
 const rootReducers = combineReducers({
     //state name: reducer function
-    counter: counterReducer,
-    productState: productReducer
+    counter: counterReducer
     //cartItems: cartReducer
 });
 
