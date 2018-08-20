@@ -1,6 +1,6 @@
 import {createStore, combineReducers, applyMiddleware} from 'redux';
-
-import counterReducer from "./state/counterReducer";
+import thunk from 'redux-thunk';
+import {stateReducer, createStateReducer, editStateReducer } from "./state/stateReducer";
 
 // function called by store
 //for every dispatch
@@ -22,15 +22,16 @@ function loggerMiddleware({dispatch, getState}) {
  
 const rootReducers = combineReducers({
     //state name: reducer function
-    counter: counterReducer
-    //cartItems: cartReducer
+    stateList: stateReducer,
+    createdState: createStateReducer,
+    updatedState: editStateReducer
 });
 
-//let store = createStore(counterReducer);
+//let store = createStore(stateReducer);
 //store.getState ==> 0, number type
 
 let store = createStore(rootReducers, 
-                        applyMiddleware(loggerMiddleware));
+                        applyMiddleware(thunk));
 //store.getState() ==> { counter : 0, cartItems: []}
 //stoer.getState() object type
 
